@@ -15,7 +15,7 @@ const FilterContainer = styled.div`
     cursor: pointer;
     font-family: inherit;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 22px;
     color: var(--text-dark);
 
@@ -23,15 +23,23 @@ const FilterContainer = styled.div`
     align-items: center;
     justify-content: center;
 
+    @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+      font-size: 14px;
+    }
+
     svg {
-      margin-left: 16px;
+      margin-left: 10px;
+
+      @media (min-width: ${props => props.theme.desktopBreakpoint}) {
+        margin-left: 16px;
+      }
     }
   }
 `;
 
 const PriorityFilter = styled.ul`
   position: absolute;
-  width: 220px;
+  width: 150px;
   background-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
@@ -40,13 +48,21 @@ const PriorityFilter = styled.ul`
   padding: 12px 16px;
 
   list-style: none;
+  font-size: 12px;
 
   top: 100%;
+  right: 1%;
+
+  @media (min-width: 768px) {
+    width: 220px;
+    top: 100%;
+
+    font-size: 14px;
+  }
 
   li {
     color: var(--text-dark);
     font-weight: 400;
-    font-size: 14px;
     line-height: 22px;
     cursor: pointer;
   }
