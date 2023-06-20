@@ -17,6 +17,7 @@ const Card = styled.div`
   backdrop-filter: blur(10px);
   border-radius: 4px;
   overflow: hidden;
+  cursor: pointer;
 
   width: 256px;
 

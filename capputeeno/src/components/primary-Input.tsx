@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 import { SearchIcon } from './icons/search-icon';
-import { InputHTMLAttributes } from 'react';
+import { ChangeEvent, InputHTMLAttributes } from 'react';
+import { useFilter } from '@/hooks/useFilter';
 
 export const PrimaryInput = styled.input`
   width: 100%;
@@ -44,16 +45,18 @@ const InputContainer = styled.div`
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   value: string;
-  handleChange: (value: string) => void;
 }
 
 export function PrimaryInputWSearchIcon(props: InputProps) {
+  const { setSearch } = useFilter();
+
+  const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value);
+  };
+
   return (
     <InputContainer>
-      <PrimaryInput
-        onChange={event => props.handleChange(event.target.value)}
-        {...props}
-      />
+      <PrimaryInput onChange={event => handleSearch(event)} {...props} />
       <SearchIcon />
     </InputContainer>
   );

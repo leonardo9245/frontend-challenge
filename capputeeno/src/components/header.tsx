@@ -45,14 +45,13 @@ const Logo = styled.a`
 `;
 
 export default function Header() {
-  const { search, setSearch } = useFilter();
+  const { search } = useFilter();
   return (
     <TagHeader>
       <Logo className={sairaStencil.className}>Capputeeno</Logo>
       <div>
         <PrimaryInputWSearchIcon
           value={search}
-          handleChange={setSearch}
           placeholder="Procurando por algo específico?"
         />
         <CartControl />
