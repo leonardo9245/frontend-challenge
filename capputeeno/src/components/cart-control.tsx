@@ -27,7 +27,7 @@ export function CartControl() {
   const { value } = useLocalStorage('cart-items', []);
   return (
     <Container>
-      <CartIcon />
+      <CartIcon color="" />
       {value.length > 0 ? <CartCount>{value.length}</CartCount> : ''}
     </Container>
   );
