@@ -10,12 +10,14 @@
   --orange-low: #ffa585;
   --shapes: #dce2e6;
   --secondary-text: #627480;
+  --success-color: #51b853;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 html,
